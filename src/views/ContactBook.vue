@@ -103,7 +103,6 @@ export default {
       try {
         const res = await ContactService.getAll();
         contacts.value = res?.docs;
-        console.log(contacts.value);
       } catch (err) {
         console.log(err);
       }
