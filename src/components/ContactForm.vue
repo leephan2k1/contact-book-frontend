@@ -106,7 +106,7 @@ export default {
         ),
     });
     return {
-      contactLocal: this.contact.doc,
+      contactLocal: this.contact?.doc,
       contactFormSchema,
     };
   },
