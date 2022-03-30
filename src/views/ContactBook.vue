@@ -86,7 +86,7 @@ export default {
     const filteredContacts = () => {
       if (!searchText.value) return contacts.value;
       return contacts.value.filter((contact, index) =>
-        contactStrings[index].includes(searchText.value)
+        contactStrings()[index].includes(searchText.value)
       );
     };
 

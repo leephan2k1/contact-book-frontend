@@ -71,6 +71,7 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import * as yup from "yup";
 import { Form, Field, ErrorMessage } from "vee-validate";
 
@@ -84,6 +85,7 @@ export default {
   props: {
     contact: { type: Object, required: true },
   },
+
   data() {
     const contactFormSchema = yup.object().shape({
       name: yup
@@ -104,9 +106,7 @@ export default {
         ),
     });
     return {
-      // Chúng ta sẽ không muốn hiệu chỉnh props, nên tạo biến cục bộ
-      //  để liên kết với các input trên form
-      contactLocal: this.contact,
+      contactLocal: this.contact.doc,
       contactFormSchema,
     };
   },
